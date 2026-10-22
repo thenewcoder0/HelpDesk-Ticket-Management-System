@@ -40,6 +40,7 @@ public class User {
 		
 	}
 	
+	//Represent a User here.
 	public User(String username, String pass, String role, boolean accStatus,boolean passChangeStatus, String empId){
 		this.username = username;
 		this.password=pass;
