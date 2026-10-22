@@ -1,5 +1,5 @@
 package helpDeskTicketManagement;
-
+//Represents a user in the HelpDesk system.
 public class User {
 	private String username;
 	public String getUsername() {
