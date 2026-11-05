@@ -1,16 +1,26 @@
 package helpDeskTicketManagement;
-//Ticket creation feature development
+
+import org.mindrot.jbcrypt.BCrypt;
+
 public class User {
 	private String username;
 	public String getUsername() {
 		return username;
 	}
 	private String password;
-	public boolean matchesPassword(String inputPassword){
-		return password.equals(inputPassword);
+	
+	public boolean matchesPassword(String inputPassword) {
+	    if (inputPassword == null || password == null) {
+	        return false;
+	    }
+	    return BCrypt.checkpw(inputPassword, password);
 	}
 	public void setPassword(String newPassword){
 		this.password = newPassword;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 	private String role;
 	public String getRole(){
@@ -50,13 +60,4 @@ public class User {
 		this.empId=empId;
 		
 	}
-
-
-public static void main(String[]args) {
-	User u1= new User("Hari123","cmx5J", "Engineer", true, false, "123");
-	System.out.println("UserName: " + u1.getUsername() );
-	System.out.println("Role: " + u1.getRole());
-	System.out.print("Account Status: " + u1.isAccountStatus());
-	
-}
 }

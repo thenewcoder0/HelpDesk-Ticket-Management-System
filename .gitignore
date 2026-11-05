@@ -1,1 +1,15 @@
+# Java compiled files
+*.class
 /bin/
+
+# Eclipse IDE files
+.metadata/
+.settings/
+*.launch
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local database test files
+DatabaseConnectionTest.java
